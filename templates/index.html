@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Codificador/Decodificador</title>
+</head>
+<body>
+    <h1>Codificador/Decodificador</h1>
+    <form method="POST" action="/">
+        <label for="codec">Deseja codificar ou decodificar uma mensagem?</label><br>
+        <input type="radio" id="codec" name="codec" value="C" required> Codificar
+        <input type="radio" id="codec" name="codec" value="D" required> Decodificar<br><br>
+
+        <label for="mensagem">Digite a mensagem:</label><br>
+        <input type="text" id="mensagem" name="mensagem" required><br><br>
+
+        <label for="deslocamento">Insira o valor do deslocamento:</label><br>
+        <input type="number" id="deslocamento" name="deslocamento" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if resultado %}
+    <h3>Resultados:</h3>
+    <p>Original: {{ mensagem_original }}</p>
+    <p>Codificada/Decodificada: {{ resultado }}</p>
+    {% elif codec %}
+    <p>Opção inválida. Por favor, escolha (C) para codificar ou (D) para decodificar.</p>
+    {% endif %}
+</body>
+</html>
